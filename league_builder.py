@@ -12,7 +12,6 @@ def get_players():
     with open('soccer_players.csv') as playerfile:
         player_reader = csv.DictReader(playerfile, delimiter=",")
         for rows in player_reader:
-            print(rows['Soccer Experience'])
             if rows['Soccer Experience'] == "YES":
                 rows['team'] = team_names[experienced]
                 teams[experienced].append(rows)
@@ -36,7 +35,7 @@ def get_players():
 def team_rosters(teams):
     x = 0
     for team in teams:
-        with open("teams.txt", "a+") as team_file:
+        with open("teams.txt", "a") as team_file:
             team_file.write(team_names[x] + '\n')
             team_file.write("=" * 10 + '\n')
             for player in team:
@@ -51,11 +50,11 @@ def parent_letters(teams):
         for player in team:
             squad = player['team']
             new_file = "_".join(player['Name'].split()).lower()
-            with open(new_file+'.txt', 'a+') as file:
-                file.write("Dear {}, \n".format(player['Guardian Name(s)']))
+            with open(new_file+'.txt', 'w') as file:
+                file.write("Dear {}, \n\n".format(player['Guardian Name(s)']))
                 file.write("Your little child, {}, is on the greatest team in the world, THE {}! \n".format(player['Name'], player['team'].upper()))
-                file.write("Our first practice will be held on {}".format(practice[squad]))
-                file.close()
+                file.write("Our first practice will be held on {}.\n\n".format(practice[squad]))
+                file.write("Sincerely,\n\nYour Coach\n\n")
 
 # Make sure it doesn't execute when imported
 if __name__ == "__main__":
