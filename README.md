@@ -1,7 +1,13 @@
-You have volunteered to be the Coordinator for your town’s youth soccer league. As part of your job you need to divide the 18 children who have signed up for the league into three even teams - Dragons, Sharks and Raptors. In years past, the teams have been unevenly matched, so this year you are doing your best to fix that. For each child, you will have the following information: Name, height (in inches), whether or not they have played soccer before, and their guardians’ names. You'll take a list of these children, divide them into teams and output a text file listing the three teams and the players on them. There are three main tasks you'll need to complete to get this done:
+## League Builder
+The League Builder program reads data from a CSV file.  It stores the data and is then iterated through to assign players to 3 teams evenly based on each team having the same number of experienced/inexperienced players.  The program outputs a text file (teams.txt) that contains the league roster listing the team name and each player including the player's information: name, soccer experience and guardian's names.  Another .txt file is created for each player that is a welcome letter with practice information.
 
-In your Python program, read the data from the supplied CSV file. Store that data in an appropriate data type so that it can be used in the next task.
+## Motivation
+This project was my very first project created in the TechDegree program for Treehouse.  
 
-Create logic that can iterate through all 18 players and assign them to teams such that each team has the same number of players. The number of experienced players on each team should also be the same.
+## Code style
+PEP 8
 
-Finally, the program should output a text file named -- teams.txt -- that contains the league roster listing the team name, and each player on the team including the player's information: name, whether they've played soccer before and their guardians' names.
+## Tech/framework used
+<b>Built with</b>
+- Python3
+
